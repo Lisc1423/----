@@ -1,0 +1,135 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+# Date created = 01:25:10  October 14, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		TOP_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM1270T144C5
+set_global_assignment -name TOP_LEVEL_ENTITY TOP
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:25:10  OCTOBER 14, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name MISC_FILE "E:/学习之lunch八糟/大三上/数电实验下/A_TOP/TOP.dpf"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_79 -to beep_led
+set_location_assignment PIN_60 -to beep_out
+set_location_assignment PIN_124 -to clear
+set_location_assignment PIN_18 -to clk
+set_location_assignment PIN_38 -to dzcolgre_out[7]
+set_location_assignment PIN_39 -to dzcolgre_out[6]
+set_location_assignment PIN_40 -to dzcolgre_out[5]
+set_location_assignment PIN_41 -to dzcolgre_out[4]
+set_location_assignment PIN_42 -to dzcolgre_out[3]
+set_location_assignment PIN_43 -to dzcolgre_out[2]
+set_location_assignment PIN_44 -to dzcolgre_out[1]
+set_location_assignment PIN_45 -to dzcolgre_out[0]
+set_location_assignment PIN_11 -to dzcolred_out[7]
+set_location_assignment PIN_12 -to dzcolred_out[6]
+set_location_assignment PIN_13 -to dzcolred_out[5]
+set_location_assignment PIN_14 -to dzcolred_out[4]
+set_location_assignment PIN_15 -to dzcolred_out[3]
+set_location_assignment PIN_16 -to dzcolred_out[2]
+set_location_assignment PIN_21 -to dzcolred_out[1]
+set_location_assignment PIN_22 -to dzcolred_out[0]
+set_location_assignment PIN_1 -to dzrow_out[7]
+set_location_assignment PIN_2 -to dzrow_out[6]
+set_location_assignment PIN_3 -to dzrow_out[5]
+set_location_assignment PIN_4 -to dzrow_out[4]
+set_location_assignment PIN_5 -to dzrow_out[3]
+set_location_assignment PIN_6 -to dzrow_out[2]
+set_location_assignment PIN_7 -to dzrow_out[1]
+set_location_assignment PIN_8 -to dzrow_out[0]
+set_location_assignment PIN_108 -to E_out
+set_location_assignment PIN_120 -to keycol_out[3]
+set_location_assignment PIN_119 -to keycol_out[2]
+set_location_assignment PIN_118 -to keycol_out[1]
+set_location_assignment PIN_117 -to keycol_out[0]
+set_location_assignment PIN_114 -to keyrow_in[3]
+set_location_assignment PIN_113 -to keyrow_in[2]
+set_location_assignment PIN_112 -to keyrow_in[1]
+set_location_assignment PIN_111 -to keyrow_in[0]
+set_location_assignment PIN_107 -to lcd_out[7]
+set_location_assignment PIN_106 -to lcd_out[6]
+set_location_assignment PIN_105 -to lcd_out[5]
+set_location_assignment PIN_104 -to lcd_out[4]
+set_location_assignment PIN_103 -to lcd_out[3]
+set_location_assignment PIN_102 -to lcd_out[2]
+set_location_assignment PIN_110 -to lcd_out[1]
+set_location_assignment PIN_101 -to lcd_out[0]
+set_location_assignment PIN_80 -to menuled_out
+set_location_assignment PIN_48 -to RS_out
+set_location_assignment PIN_109 -to RW_out
+set_location_assignment PIN_31 -to smgcat_out[7]
+set_location_assignment PIN_30 -to smgcat_out[6]
+set_location_assignment PIN_70 -to smgcat_out[5]
+set_location_assignment PIN_69 -to smgcat_out[4]
+set_location_assignment PIN_68 -to smgcat_out[3]
+set_location_assignment PIN_67 -to smgcat_out[2]
+set_location_assignment PIN_66 -to smgcat_out[1]
+set_location_assignment PIN_63 -to smgcat_out[0]
+set_location_assignment PIN_62 -to smgdata_out[6]
+set_location_assignment PIN_59 -to smgdata_out[5]
+set_location_assignment PIN_58 -to smgdata_out[4]
+set_location_assignment PIN_57 -to smgdata_out[3]
+set_location_assignment PIN_55 -to smgdata_out[2]
+set_location_assignment PIN_53 -to smgdata_out[1]
+set_location_assignment PIN_52 -to smgdata_out[0]
+set_global_assignment -name MISC_FILE "E:/学习之lunch八糟/大三上/数电实验下/A_TOP10.16中午待改bug/A_TOP/TOP.dpf"
+set_location_assignment PIN_73 -to menuled_out[5]
+set_location_assignment PIN_74 -to menuled_out[4]
+set_location_assignment PIN_75 -to menuled_out[3]
+set_location_assignment PIN_76 -to menuled_out[2]
+set_location_assignment PIN_77 -to menuled_out[1]
+set_location_assignment PIN_78 -to menuled_out[0]
+set_global_assignment -name MISC_FILE "C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/TOP.dpf"
+set_global_assignment -name VHDL_FILE TOP.vhd
+set_global_assignment -name VHDL_FILE STRUCT.vhd
+set_global_assignment -name VHDL_FILE SMG.vhd
+set_global_assignment -name VHDL_FILE BEEP.vhd
+set_global_assignment -name VHDL_FILE LCD.vhd
+set_global_assignment -name VHDL_FILE CLK.vhd
+set_global_assignment -name VHDL_FILE DZ.vhd
+set_global_assignment -name VHDL_FILE KEY.vhd
+set_global_assignment -name VHDL_FILE STATE.vhd

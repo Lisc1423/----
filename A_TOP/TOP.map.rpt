@@ -1,0 +1,678 @@
+Analysis & Synthesis report for TOP
+Thu Oct 17 18:25:11 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |TOP|STATE:u7|state
+  8. State Machine - |TOP|STATE:u7|\pstate:key_value
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div3
+ 17. Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div2
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Oct 17 18:25:11 2019        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; TOP                                          ;
+; Top-level Entity Name       ; TOP                                          ;
+; Family                      ; MAX II                                       ;
+; Total logic elements        ; 1,213                                        ;
+; Total pins                  ; 68                                           ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
++-----------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                        ; TOP                ; TOP                ;
+; Family name                                                  ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                           ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
+; TOP.vhd                          ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/TOP.vhd                    ;
+; STRUCT.vhd                       ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/STRUCT.vhd                 ;
+; SMG.vhd                          ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/SMG.vhd                    ;
+; BEEP.vhd                         ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/BEEP.vhd                   ;
+; LCD.vhd                          ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/LCD.vhd                    ;
+; CLK.vhd                          ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/CLK.vhd                    ;
+; DZ.vhd                           ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/DZ.vhd                     ;
+; KEY.vhd                          ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/KEY.vhd                    ;
+; STATE.vhd                        ; yes             ; User VHDL File               ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/STATE.vhd                  ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/quartus 9.0/quartus/libraries/megafunctions/lpm_divide.tdf                                          ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/quartus 9.0/quartus/libraries/megafunctions/abs_divider.inc                                         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/quartus 9.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                     ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/quartus 9.0/quartus/libraries/megafunctions/aglobal90.inc                                           ;
+; db/lpm_divide_ovl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/lpm_divide_ovl.tdf      ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/sign_div_unsign_9kh.tdf ;
+; db/alt_u_div_die.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/alt_u_div_die.tdf       ;
+; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/add_sub_e7c.tdf         ;
+; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/add_sub_f7c.tdf         ;
+; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/add_sub_g7c.tdf         ;
+; db/add_sub_h7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/add_sub_h7c.tdf         ;
+; db/add_sub_i7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/db/add_sub_i7c.tdf         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Total logic elements                        ; 1213           ;
+;     -- Combinational with no register       ; 771            ;
+;     -- Register only                        ; 265            ;
+;     -- Combinational with a register        ; 177            ;
+;                                             ;                ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 546            ;
+;     -- 3 input functions                    ; 163            ;
+;     -- 2 input functions                    ; 153            ;
+;     -- 1 input functions                    ; 86             ;
+;     -- 0 input functions                    ; 0              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 1125           ;
+;     -- arithmetic mode                      ; 88             ;
+;     -- qfbk mode                            ; 0              ;
+;     -- register cascade mode                ; 0              ;
+;     -- synchronous clear/load mode          ; 26             ;
+;     -- asynchronous clear/load mode         ; 19             ;
+;                                             ;                ;
+; Total registers                             ; 442            ;
+; Total logic cells in carry chains           ; 114            ;
+; I/O pins                                    ; 68             ;
+; Maximum fan-out node                        ; CLKD:u6|clk_1k ;
+; Maximum fan-out                             ; 421            ;
+; Total fan-out                               ; 4198           ;
+; Average fan-out                             ; 3.28           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                               ; Library Name ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |TOP                                      ; 1213 (0)    ; 442          ; 0          ; 68   ; 0            ; 771 (0)      ; 265 (0)           ; 177 (0)          ; 114 (0)         ; 0 (0)      ; |TOP                                                                                                                              ; work         ;
+;    |BEEP:u3|                              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TOP|BEEP:u3                                                                                                                      ; work         ;
+;    |CLKD:u6|                              ; 44 (44)     ; 20           ; 0          ; 0    ; 0            ; 24 (24)      ; 6 (6)             ; 14 (14)          ; 18 (18)         ; 0 (0)      ; |TOP|CLKD:u6                                                                                                                      ; work         ;
+;    |DZ:u2|                                ; 47 (47)     ; 3            ; 0          ; 0    ; 0            ; 44 (44)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |TOP|DZ:u2                                                                                                                        ; work         ;
+;    |KEY:u5|                               ; 36 (36)     ; 18           ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |TOP|KEY:u5                                                                                                                       ; work         ;
+;    |LCD:u4|                               ; 246 (122)   ; 15           ; 0          ; 0    ; 0            ; 231 (107)    ; 5 (5)             ; 10 (10)          ; 72 (4)          ; 0 (0)      ; |TOP|LCD:u4                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                   ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_ovl:auto_generated|  ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider                                             ; work         ;
+;                |alt_u_div_die:divider|    ; 30 (14)     ; 0            ; 0          ; 0    ; 0            ; 30 (14)      ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider                       ; work         ;
+;                   |add_sub_h7c:add_sub_3| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                   |add_sub_i7c:add_sub_4| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_4 ; work         ;
+;                   |add_sub_i7c:add_sub_5| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_5 ; work         ;
+;       |lpm_divide:Div1|                   ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1                                                                                                       ; work         ;
+;          |lpm_divide_ovl:auto_generated|  ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider                                             ; work         ;
+;                |alt_u_div_die:divider|    ; 30 (14)     ; 0            ; 0          ; 0    ; 0            ; 30 (14)      ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider                       ; work         ;
+;                   |add_sub_h7c:add_sub_3| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                   |add_sub_i7c:add_sub_4| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_4 ; work         ;
+;                   |add_sub_i7c:add_sub_5| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div1|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_5 ; work         ;
+;       |lpm_divide:Div2|                   ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2                                                                                                       ; work         ;
+;          |lpm_divide_ovl:auto_generated|  ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider                                             ; work         ;
+;                |alt_u_div_die:divider|    ; 32 (14)     ; 0            ; 0          ; 0    ; 0            ; 32 (14)      ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider                       ; work         ;
+;                   |add_sub_h7c:add_sub_3| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                   |add_sub_i7c:add_sub_4| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_4 ; work         ;
+;                   |add_sub_i7c:add_sub_5| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div2|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_5 ; work         ;
+;       |lpm_divide:Div3|                   ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3                                                                                                       ; work         ;
+;          |lpm_divide_ovl:auto_generated|  ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 32 (0)      ; 0            ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider                                             ; work         ;
+;                |alt_u_div_die:divider|    ; 32 (14)     ; 0            ; 0          ; 0    ; 0            ; 32 (14)      ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider                       ; work         ;
+;                   |add_sub_h7c:add_sub_3| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                   |add_sub_i7c:add_sub_4| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_4 ; work         ;
+;                   |add_sub_i7c:add_sub_5| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_5 ; work         ;
+;    |SMG:u1|                               ; 109 (109)   ; 19           ; 0          ; 0    ; 0            ; 90 (90)      ; 3 (3)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |TOP|SMG:u1                                                                                                                       ; work         ;
+;    |STATE:u7|                             ; 730 (730)   ; 366          ; 0          ; 0    ; 0            ; 364 (364)    ; 251 (251)         ; 115 (115)        ; 24 (24)         ; 0 (0)      ; |TOP|STATE:u7                                                                                                                     ; work         ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TOP|STATE:u7|state                                                                                                    ;
++---------------------+-------------------+--------------------+---------------------+------------------+-------------------+------------+
+; Name                ; state.SHOW_RECORD ; state.INPUT_CIPHER ; state.CHANGE_CIPHER ; state.ADD_CIPHER ; state.CHOOSE_USER ; state.MENU ;
++---------------------+-------------------+--------------------+---------------------+------------------+-------------------+------------+
+; state.MENU          ; 0                 ; 0                  ; 0                   ; 0                ; 0                 ; 0          ;
+; state.CHOOSE_USER   ; 0                 ; 0                  ; 0                   ; 0                ; 1                 ; 1          ;
+; state.ADD_CIPHER    ; 0                 ; 0                  ; 0                   ; 1                ; 0                 ; 1          ;
+; state.CHANGE_CIPHER ; 0                 ; 0                  ; 1                   ; 0                ; 0                 ; 1          ;
+; state.INPUT_CIPHER  ; 0                 ; 1                  ; 0                   ; 0                ; 0                 ; 1          ;
+; state.SHOW_RECORD   ; 1                 ; 0                  ; 0                   ; 0                ; 0                 ; 1          ;
++---------------------+-------------------+--------------------+---------------------+------------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TOP|STATE:u7|\pstate:key_value                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++-----------------------------+---------------------------+-----------------------------+--------------------------+-----------------------+--------------------------+-----------------------+-------------------------+------------------------+------------------------+-------------------------+-------------------------+-----------------------+------------------------+------------------------+-------------------------+-----------------------+-----------------------+
+; Name                        ; \pstate:key_value.nothing ; \pstate:key_value.recording ; \pstate:key_value.modify ; \pstate:key_value.add ; \pstate:key_value.choose ; \pstate:key_value.del ; \pstate:key_value.enter ; \pstate:key_value.zero ; \pstate:key_value.nine ; \pstate:key_value.eight ; \pstate:key_value.seven ; \pstate:key_value.six ; \pstate:key_value.five ; \pstate:key_value.four ; \pstate:key_value.three ; \pstate:key_value.two ; \pstate:key_value.one ;
++-----------------------------+---------------------------+-----------------------------+--------------------------+-----------------------+--------------------------+-----------------------+-------------------------+------------------------+------------------------+-------------------------+-------------------------+-----------------------+------------------------+------------------------+-------------------------+-----------------------+-----------------------+
+; \pstate:key_value.one       ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 0                     ;
+; \pstate:key_value.two       ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 1                     ; 1                     ;
+; \pstate:key_value.three     ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 1                       ; 0                     ; 1                     ;
+; \pstate:key_value.four      ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 1                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.five      ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 1                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.six       ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 1                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.seven     ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 1                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.eight     ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 1                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.nine      ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 1                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.zero      ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 1                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.enter     ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 1                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.del       ; 0                         ; 0                           ; 0                        ; 0                     ; 0                        ; 1                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.choose    ; 0                         ; 0                           ; 0                        ; 0                     ; 1                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.add       ; 0                         ; 0                           ; 0                        ; 1                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.modify    ; 0                         ; 0                           ; 1                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.recording ; 0                         ; 1                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
+; \pstate:key_value.nothing   ; 1                         ; 0                           ; 0                        ; 0                     ; 0                        ; 0                     ; 0                       ; 0                      ; 0                      ; 0                       ; 0                       ; 0                     ; 0                      ; 0                      ; 0                       ; 0                     ; 1                     ;
++-----------------------------+---------------------------+-----------------------------+--------------------------+-----------------------+--------------------------+-----------------------+-------------------------+------------------------+------------------------+-------------------------+-------------------------+-----------------------+------------------------+------------------------+-------------------------+-----------------------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; DZ:u2|row[0]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[1]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[2]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[3]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[4]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[5]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|row[6]                                        ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_r[0]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[1]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[2]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[3]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[4]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[5]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[6]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_r[7]                                      ; STATE:u7|islock[1]  ; yes                    ;
+; DZ:u2|col_g[0]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[1]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[2]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[3]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[4]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[5]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[6]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; DZ:u2|col_g[7]                                      ; DZ:u2|row[7]~1      ; yes                    ;
+; Number of user-specified and inferred latches = 23  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; STATE:u7|\pstate:key_value.one         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.two         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.three       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.four        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.five        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.six         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.seven       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.eight       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.nine        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.zero        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.enter       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.del         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.choose      ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.add         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.modify      ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.recording   ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.nothing     ; Lost fanout        ;
+; Total Number of Removed Registers = 17 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 442   ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 13    ;
+; Number of registers using Asynchronous Clear ; 19    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 308   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; STATE:u7|\pstate:current_user[0]        ; 86      ;
+; STATE:u7|four_cipher_lenth[2][1]        ; 1       ;
+; STATE:u7|four_cipher_lenth[1][1]        ; 1       ;
+; STATE:u7|four_cipher_lenth[4][1]        ; 1       ;
+; STATE:u7|four_cipher_lenth[3][1]        ; 1       ;
+; STATE:u7|four_cipher_lenth[1][2]        ; 1       ;
+; STATE:u7|four_cipher_lenth[2][2]        ; 1       ;
+; STATE:u7|four_cipher_lenth[4][2]        ; 1       ;
+; STATE:u7|four_cipher_lenth[3][2]        ; 1       ;
+; STATE:u7|\pstate:number_user[1]         ; 8       ;
+; STATE:u7|islock[0]                      ; 8       ;
+; SMG:u1|cnt[0]                           ; 14      ;
+; STATE:u7|num_user[1]                    ; 1       ;
+; STATE:u7|now_user[0]                    ; 1       ;
+; KEY:u5|\p4:lastkey[4]                   ; 1       ;
+; KEY:u5|\p4:lastkey[2]                   ; 1       ;
+; KEY:u5|\p4:lastkey[0]                   ; 1       ;
+; KEY:u5|\p4:lastkey[1]                   ; 1       ;
+; KEY:u5|\p4:lastkey[3]                   ; 2       ;
+; Total number of inverted registers = 19 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |TOP|SMG:u1|c[3]                           ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |TOP|SMG:u1|b[3]                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:current_recording[0] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:current_recording[3] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:number_user[3]       ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |TOP|STATE:u7|\pstate:number_input[1]      ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 26 LEs               ; 39 LEs                 ; Yes        ; |TOP|STATE:u7|rec_time.seco[5]             ;
+; 29:1               ; 3 bits    ; 57 LEs        ; 9 LEs                ; 48 LEs                 ; Yes        ; |TOP|KEY:u5|keykey[2]                      ;
+; 80:1               ; 4 bits    ; 212 LEs       ; 56 LEs               ; 156 LEs                ; Yes        ; |TOP|LCD:u4|data[7]                        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux45                        ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux14                        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux19                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux23                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux27                        ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TOP|LCD:u4|Add1                           ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 15 LEs               ; 21 LEs                 ; No         ; |TOP|STATE:u7|Selector106                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------+
+; Parameter Name         ; Value          ; Type                          ;
++------------------------+----------------+-------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                       ;
+; CBXI_PARAMETER         ; lpm_divide_ovl ; Untyped                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
++------------------------+----------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------+
+; Parameter Name         ; Value          ; Type                          ;
++------------------------+----------------+-------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                       ;
+; CBXI_PARAMETER         ; lpm_divide_ovl ; Untyped                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
++------------------------+----------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div3 ;
++------------------------+----------------+-------------------------------+
+; Parameter Name         ; Value          ; Type                          ;
++------------------------+----------------+-------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                       ;
+; CBXI_PARAMETER         ; lpm_divide_ovl ; Untyped                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
++------------------------+----------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD:u4|lpm_divide:Div2 ;
++------------------------+----------------+-------------------------------+
+; Parameter Name         ; Value          ; Type                          ;
++------------------------+----------------+-------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                       ;
+; CBXI_PARAMETER         ; lpm_divide_ovl ; Untyped                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
++------------------------+----------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Oct 17 18:25:05 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TOP -c TOP
+Info: Found 2 design units, including 1 entities, in source file TOP.vhd
+    Info: Found design unit 1: TOP-a_top
+    Info: Found entity 1: TOP
+Info: Found 2 design units, including 0 entities, in source file STRUCT.vhd
+    Info: Found design unit 1: STRUCT
+    Info: Found design unit 2: STRUCT-body
+Info: Found 2 design units, including 1 entities, in source file SMG.vhd
+    Info: Found design unit 1: SMG-smg0
+    Info: Found entity 1: SMG
+Info: Found 2 design units, including 1 entities, in source file BEEP.vhd
+    Info: Found design unit 1: BEEP-behavioral
+    Info: Found entity 1: BEEP
+Info: Found 2 design units, including 1 entities, in source file LCD.vhd
+    Info: Found design unit 1: LCD-a
+    Info: Found entity 1: LCD
+Info: Found 2 design units, including 1 entities, in source file CLK.vhd
+    Info: Found design unit 1: CLKD-a
+    Info: Found entity 1: CLKD
+Info: Found 2 design units, including 1 entities, in source file DZ.vhd
+    Info: Found design unit 1: DZ-one
+    Info: Found entity 1: DZ
+Info: Found 2 design units, including 1 entities, in source file KEY.vhd
+    Info: Found design unit 1: KEY-a
+    Info: Found entity 1: KEY
+Info: Found 2 design units, including 1 entities, in source file STATE.vhd
+    Info: Found design unit 1: STATE-behavioral
+    Info: Found entity 1: STATE
+Info: Elaborating entity "TOP" for the top level hierarchy
+Info: Elaborating entity "SMG" for hierarchy "SMG:u1"
+Info: Elaborating entity "DZ" for hierarchy "DZ:u2"
+Warning (10492): VHDL Process Statement warning at DZ.vhd(29): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(43): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(56): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at DZ.vhd(17): inferring latch(es) for signal or variable "col_r", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DZ.vhd(17): inferring latch(es) for signal or variable "row", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DZ.vhd(17): inferring latch(es) for signal or variable "col_g", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "col_g[0]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[1]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[2]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[3]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[4]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[5]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[6]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_g[7]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[0]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[1]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[2]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[3]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[4]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[5]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[6]" at DZ.vhd(17)
+Info (10041): Inferred latch for "row[7]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[0]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[1]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[2]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[3]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[4]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[5]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[6]" at DZ.vhd(17)
+Info (10041): Inferred latch for "col_r[7]" at DZ.vhd(17)
+Info: Elaborating entity "BEEP" for hierarchy "BEEP:u3"
+Info: Elaborating entity "LCD" for hierarchy "LCD:u4"
+Info: Elaborating entity "KEY" for hierarchy "KEY:u5"
+Warning (10492): VHDL Process Statement warning at KEY.vhd(37): signal "coltmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at KEY.vhd(41): signal "inclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "CLKD" for hierarchy "CLKD:u6"
+Info: Elaborating entity "STATE" for hierarchy "STATE:u7"
+Warning (10492): VHDL Process Statement warning at STATE.vhd(93): signal "num_recording" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at STATE.vhd(93): signal "now_recording" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at STATE.vhd(190): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: 4 out of 8 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 2 warnings found, and 2 warnings are reported.
+    Warning: Memory Initialization File Address 0 is not initialized
+    Warning: Addresses ranging from 5 to 7 are not initialized
+Info: Inferred 4 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD:u4|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD:u4|Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD:u4|Div3"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD:u4|Div2"
+Info: Elaborated megafunction instantiation "LCD:u4|lpm_divide:Div0"
+Info: Instantiated megafunction "LCD:u4|lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "6"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_ovl.tdf
+    Info: Found entity 1: lpm_divide_ovl
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info: Found entity 1: sign_div_unsign_9kh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_die.tdf
+    Info: Found entity 1: alt_u_div_die
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_e7c.tdf
+    Info: Found entity 1: add_sub_e7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_f7c.tdf
+    Info: Found entity 1: add_sub_f7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_g7c.tdf
+    Info: Found entity 1: add_sub_g7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_h7c.tdf
+    Info: Found entity 1: add_sub_h7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_i7c.tdf
+    Info: Found entity 1: add_sub_i7c
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "DZ:u2|row[1]" merged with LATCH primitive "DZ:u2|row[0]"
+    Info: Duplicate LATCH primitive "DZ:u2|row[2]" merged with LATCH primitive "DZ:u2|row[0]"
+    Info: Duplicate LATCH primitive "DZ:u2|row[3]" merged with LATCH primitive "DZ:u2|row[0]"
+    Info: Duplicate LATCH primitive "DZ:u2|row[5]" merged with LATCH primitive "DZ:u2|row[4]"
+Warning: Latch DZ:u2|row[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|row[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|row[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_r[0] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[1] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[2] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[3] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[4] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[5] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[6] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_r[7] has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+Warning: Latch DZ:u2|col_g[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Latch DZ:u2|col_g[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[0]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dzrow_out[7]" is stuck at VCC
+    Warning (13410): Pin "RW_out" is stuck at GND
+Info: 17 registers lost all their fanouts during netlist optimizations. The first 17 are displayed below.
+    Info: Register "STATE:u7|\pstate:key_value.one" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.two" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.three" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.four" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.five" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.six" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.seven" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.eight" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.nine" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.zero" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.enter" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.del" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.choose" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.add" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.modify" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.recording" lost all its fanouts during netlist optimizations.
+    Info: Register "STATE:u7|\pstate:key_value.nothing" lost all its fanouts during netlist optimizations.
+Info: Implemented 1281 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 62 output pins
+    Info: Implemented 1213 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 275 megabytes
+    Info: Processing ended: Thu Oct 17 18:25:11 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

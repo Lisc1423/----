@@ -1,0 +1,29 @@
+
+State Machine - |TOP|STATE:u7|state
+Name state.SHOW_RECORD state.INPUT_CIPHER state.CHANGE_CIPHER state.ADD_CIPHER state.CHOOSE_USER state.MENU 
+state.MENU 0 0 0 0 0 0 
+state.CHOOSE_USER 0 0 0 0 1 1 
+state.ADD_CIPHER 0 0 0 1 0 1 
+state.CHANGE_CIPHER 0 0 1 0 0 1 
+state.INPUT_CIPHER 0 1 0 0 0 1 
+state.SHOW_RECORD 1 0 0 0 0 1 
+
+State Machine - |TOP|STATE:u7|\pstate:key_value
+Name \pstate:key_value.nothing \pstate:key_value.recording \pstate:key_value.modify \pstate:key_value.add \pstate:key_value.choose \pstate:key_value.del \pstate:key_value.enter \pstate:key_value.zero \pstate:key_value.nine \pstate:key_value.eight \pstate:key_value.seven \pstate:key_value.six \pstate:key_value.five \pstate:key_value.four \pstate:key_value.three \pstate:key_value.two \pstate:key_value.one 
+\pstate:key_value.one 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\pstate:key_value.two 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\pstate:key_value.three 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\pstate:key_value.four 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\pstate:key_value.five 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\pstate:key_value.six 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\pstate:key_value.seven 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\pstate:key_value.eight 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\pstate:key_value.nine 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\pstate:key_value.zero 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.enter 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.del 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.choose 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.add 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.modify 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.recording 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\pstate:key_value.nothing 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
