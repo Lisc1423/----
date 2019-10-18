@@ -6,9 +6,11 @@ use work.STRUCT.all;
 entity STATE is
 port(
 			clk: in std_logic;
+			clear: in std_logic;
 			clk_1hz: in std_logic;
+			sysadmin: in std_logic;
 			data_key:in std_logic_vector(4 downto 0);
-			data_menuled: out std_logic_vector(5 downto 0);                                       --ismenu
+			data_menuled: out std_logic_vector(6 downto 0);                                       --ismenu
 			data_beep: out std_logic;										--isbeep
 			data_dz: out std_logic_vector(1 downto 0);                   --islock
 			data_smg:out smg_eight;                                       --issmg
@@ -18,25 +20,25 @@ port(
 );
 end STATE;
 architecture behavioral of STATE is
-signal  state:all_state :=MENU;                                                                          --µ±Ç°×´Ì¬»ú×´Ì¬
+signal  state:all_state :=MENU;                                                                          --ï¿½ï¿½Ç°×´Ì¬ï¿½ï¿½×´Ì¬
 
-signal  four_cipher:four_cipher_six:=((1,1,1,1,1,1),(2,2,2,2,2,2),(3,3,3,3,3,3),(4,4,4,4,4,4));	--´æ´¢4¸öÓÃ»§µÄÃÜÂënine_cipher(1)(1)<=1£»
-signal  four_cipher_lenth:four_cipher_len:=(6,6,6,6);											 --´æ´¢4¸öÓÃ»§µÄÃÜÂë³¤¶È
-signal  three_recording:three_moment;--:=((1,9,3),(1,6,8),(0,3,4));																 --´æ´¢3¸ö¼ÇÂ¼   ten_recording(1)<=(0,0,1);
+signal  four_cipher:four_cipher_six:=((1,1,1,1,1,1),(2,2,2,2,2,2),(3,3,3,3,3,3),(4,4,4,4,4,4));	--ï¿½æ´¢4ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nine_cipher(1)(1)<=1ï¿½ï¿½
+signal  four_cipher_lenth:four_cipher_len:=(4,4,4,4);											 --ï¿½æ´¢4ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½
+signal  three_recording:three_moment;															 --ï¿½æ´¢3ï¿½ï¿½ï¿½ï¿½Â¼   ten_recording(1)<=(0,0,1);
 
-signal  num_recording:INTEGER RANGE 0 TO 3 :=0;                                                        --µ±Ç°¼ÇÂ¼×ÜÊý
-signal  num_user:INTEGER RANGE 0 TO 4 :=2;                                                              --µ±Ç°ÓÃ»§×ÜÊý
-signal  num_input:INTEGER RANGE 0 TO 6 :=0;                                                             --µ±Ç°ÊäÈëÊý×Ö×ÜÊý
-signal  now_user:INTEGER RANGE 0 TO 4 :=1;                                                              --¼ÇÂ¼µ±Ç°ÓÃ»§Ãû³Æ
-signal  now_recording:INTEGER RANGE 0 TO 3 :=0;                                                         --¼ÇÂ¼µ±Ç°ÏÔÊ¾¼ÇÂ¼ÐòºÅ
-signal  now_input:cipher_six;	   --µ±Ç°ÓÃ»§ÊäÈëµÄÁù¸öÊý
-signal  now_time: moment:=(0,0,0);																	    --¼ÇÂ¼µ±Ç°Ê±¿Ì   now_time<=(0,0,1);
+signal  num_recording:INTEGER RANGE 0 TO 5 :=0;                                                        --ï¿½ï¿½Ç°ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+signal  num_user:INTEGER RANGE 0 TO 4 :=2;                                                              --ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+signal  num_input:INTEGER RANGE 0 TO 6 :=0;                                                             --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+signal  now_user:INTEGER RANGE 0 TO 4 :=1;                                                              --ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+signal  now_recording:INTEGER RANGE 0 TO 5 :=0;                                                         --ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Â¼ï¿½ï¿½ï¿½
+signal  now_input:cipher_six;	   --ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+signal  now_time: moment:=(0,0,0);																	    --ï¿½ï¿½Â¼ï¿½ï¿½Ç°Ê±ï¿½ï¿½   now_time<=(0,0,1);
 signal  rec_time: moment:=(0,0,0);
-signal  issmg:smg_eight:=(10,10,10,10,10,10,10,10);                                                          --µ±Ç°ÊýÂë¹ÜµÄÏÔÊ¾ÄÚÈÝ
-signal  ismenu:std_logic_vector(5 downto 0):= "100000";                                                   --µ±Ç°ÊÇ·ñÔÚmenu×´Ì¬
-signal  islock:std_logic_vector(1 downto 0) := "01";                                                     --µ±Ç°ËøµÄ×´Ì¬       ¸ødzµÄÐÅºÅ
-signal  isbeep:std_logic := '0';                                                           --µ±Ç°·äÃùÆ÷µÄ×´Ì¬    ¸ø·äÃùÆ÷µÄÐÅºÅ
-signal  islcd:std_logic := '0';																	     --µ±Ç°lcd×´Ì¬
+signal  issmg:smg_eight:=(10,10,10,10,10,10,10,10);                                                          --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
+signal  ismenu:std_logic_vector(6 downto 0):= "0100000";                                                   --ï¿½ï¿½Ç°ï¿½Ç·ï¿½ï¿½ï¿½menu×´Ì¬
+signal  islock:std_logic_vector(1 downto 0) := "01";                                                     --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½×´Ì¬       ï¿½ï¿½dzï¿½ï¿½ï¿½Åºï¿½
+signal  isbeep:std_logic := '0';                                                           --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½
+signal  islcd:std_logic := '0';																	     --ï¿½ï¿½Ç°lcd×´Ì¬
 
 begin
 
@@ -53,7 +55,11 @@ begin
 	variable m:INTEGER RANGE 0 TO 59;
 	variable s:INTEGER RANGE 0 TO 59;
 	begin
-		if clk_1hz'event and clk_1hz='1'then
+	if clear = '1' then 
+			s:=0;
+			m:=0;
+			h:=0;
+		elsif clk_1hz'event and clk_1hz='1'then
 				if s=59 then 
 					s := 0;
 					if m=59 then 
@@ -74,17 +80,26 @@ begin
 	end process ;
 	pmenu:process(clk,state)
 	begin
+	if clear = '1' then 
+		 ismenu<="1111111";
+	else
 		CASE state IS 
-		WHEN MENU=> ismenu<="100000";
-		WHEN CHOOSE_USER=> ismenu<="010000";
-		WHEN ADD_CIPHER=> ismenu<="001000";
-		WHEN CHANGE_CIPHER=> ismenu<="000100";
-		WHEN INPUT_CIPHER=> ismenu<="000010";
-		WHEN SHOW_RECORD=> ismenu<="000001";
+		WHEN ADMIN=> ismenu<="1000000";
+		WHEN MENU=> ismenu<="0100000";
+		WHEN CHOOSE_USER=> ismenu<="0010000";
+		WHEN ADD_CIPHER=> ismenu<="0001000";
+		WHEN CHANGE_CIPHER=> ismenu<="0000100";
+		WHEN INPUT_CIPHER=> ismenu<="0000010";
+		WHEN SHOW_RECORD=> ismenu<="0000001";		
 		end case;
+	end if;
 	end process ;
 	psmg:process(clk,num_input,num_user,now_input,now_user,state)
 	begin
+	if clear = '1' then 
+			issmg(1)<=10;issmg(2)<=10;issmg(3)<=10;issmg(4)<=10;
+			issmg(5)<=10;issmg(6)<=10;issmg(7)<=10;issmg(8)<=10;
+	else 
 		CASE state IS
 		WHEN MENU => 
 			issmg(1)<=10;issmg(2)<=10;issmg(3)<=10;issmg(4)<=10;
@@ -99,27 +114,27 @@ begin
 			issmg(1)<=num_user;issmg(2)<=now_user;
 			case num_input is
 				when 0 =>
-					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-					issmg(6)<=10;issmg(7)<=10;issmg(8)<=10;
-				when 1 =>
-					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-					issmg(6)<=10;issmg(7)<=10;issmg(8)<=11;
-				when 2 =>
-					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-					issmg(6)<=10;issmg(7)<=11;issmg(8)<=11;
-				when 3 =>
-					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-					issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
-				when 4 =>
-					issmg(3)<=10;issmg(4)<=10;issmg(5)<=11;
-					issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
-				when 5 =>
-					issmg(3)<=10;issmg(4)<=11;issmg(5)<=11;
-					issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
-				when 6 =>
-					issmg(3)<=11;issmg(4)<=11;issmg(5)<=11;
-					issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
-				when others => NULL;
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+				issmg(6)<=10;issmg(7)<=10;issmg(8)<=10;
+			when 1 =>
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+				issmg(6)<=10;issmg(7)<=10;issmg(8)<=now_input(1);
+			when 2 =>
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+				issmg(6)<=10;issmg(7)<=now_input(1);issmg(8)<=now_input(2);
+			when 3 =>
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+				issmg(6)<=now_input(1);issmg(7)<=now_input(2);issmg(8)<=now_input(3);
+			when 4 =>
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=now_input(1);
+				issmg(6)<=now_input(2);issmg(7)<=now_input(3);issmg(8)<=now_input(4);
+			when 5 =>
+				issmg(3)<=10;issmg(4)<=now_input(1);issmg(5)<=now_input(2);
+				issmg(6)<=now_input(3);issmg(7)<=now_input(4);issmg(8)<=now_input(5);
+			when 6 =>
+				issmg(3)<=now_input(1);issmg(4)<=now_input(2);issmg(5)<=now_input(3);
+				issmg(6)<=now_input(4);issmg(7)<=now_input(5);issmg(8)<=now_input(6);
+			when others => NULL;
 			END case;
 		WHEN ADD_CIPHER =>
 			issmg(1)<=num_user;issmg(2)<=10;
@@ -172,24 +187,55 @@ begin
 				issmg(3)<=now_input(1);issmg(4)<=now_input(2);issmg(5)<=now_input(3);
 				issmg(6)<=now_input(4);issmg(7)<=now_input(5);issmg(8)<=now_input(6);
 			when others => NULL;
-			END case;	
+			END case;
+		WHEN ADMIN =>
+				issmg(1)<=num_user;issmg(2)<=now_user;
+				case four_cipher_lenth(now_user) is
+				when 1 =>
+					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+					issmg(6)<=10;issmg(7)<=10;issmg(8)<=four_cipher(now_user)(1);
+				when 2 =>
+					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+					issmg(6)<=10;issmg(7)<=four_cipher(now_user)(1);issmg(8)<=four_cipher(now_user)(2);
+				when 3 =>
+					issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
+					issmg(6)<=four_cipher(now_user)(1);issmg(7)<=four_cipher(now_user)(2);issmg(8)<=four_cipher(now_user)(3);
+				when 4 =>
+					issmg(3)<=10;issmg(4)<=10;issmg(5)<=four_cipher(now_user)(1);
+					issmg(6)<=four_cipher(now_user)(2);issmg(7)<=four_cipher(now_user)(3);issmg(8)<=four_cipher(now_user)(4);
+				when 5 =>
+					issmg(3)<=10;issmg(4)<=four_cipher(now_user)(1);issmg(5)<=four_cipher(now_user)(2);
+					issmg(6)<=four_cipher(now_user)(3);issmg(7)<=four_cipher(now_user)(4);issmg(8)<=four_cipher(now_user)(5);
+				when 6 =>
+					issmg(3)<=four_cipher(now_user)(1);issmg(4)<=four_cipher(now_user)(2);issmg(5)<=four_cipher(now_user)(3);
+					issmg(6)<=four_cipher(now_user)(4);issmg(7)<=four_cipher(now_user)(5);issmg(8)<=four_cipher(now_user)(6);
+				when others => NULL;
+		END case;	
 		WHEN OTHERS =>NULL;
 		END CASE;
+	end if;
 	end process;
 
 	pstate:process(data_key)
-	variable  number_recording:INTEGER RANGE 0 TO 10 :=0;                                                        --µ±Ç°¼ÇÂ¼×ÜÊý
-	variable  number_user:INTEGER RANGE 0 TO 9 :=2;                                                              --µ±Ç°ÓÃ»§×ÜÊý
-	variable  number_input:INTEGER RANGE 0 TO 6 :=0; 															 --µ±Ç°ÊäÈë×ÜÊý
-	variable  current_user:INTEGER RANGE 0 TO 9 :=1;                                                              --¼ÇÂ¼µ±Ç°ÓÃ»§Ãû³Æ
-	variable  current_recording:INTEGER RANGE 0 TO 9 :=0;                                                         --¼ÇÂ¼µ±Ç°ÏÔÊ¾¼ÇÂ¼ÐòºÅ
-	variable  current_input:cipher_six;	                                                                          --µ±Ç°ÓÃ»§ÊäÈëµÄÁù¸öÊý
+	variable  number_recording:INTEGER RANGE 0 TO 10 :=0;                             --ï¿½ï¿½Ç°ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+	variable  number_user:INTEGER RANGE 0 TO 9 :=2;                    --ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+	variable  number_input:INTEGER RANGE 0 TO 6 :=0; 								 --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	variable  current_user:INTEGER RANGE 0 TO 9 :=1;                                  --ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+	variable  current_recording:INTEGER RANGE 0 TO 9 :=0;                      --ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Â¼ï¿½ï¿½ï¿½
+	variable  current_input:cipher_six;	                                   --ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	variable  cnt:INTEGER RANGE 0 TO 199 ;
-    variable  key_value:key:=nothing;																					 --µ±Ç°°´¼üµÄÃû³Æ
-	begin	
-	if clk'event and clk='1' then
+	variable  correct:INTEGER RANGE 0 TO 6 :=0;
+    variable  key_value:key:=nothing;																					 --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	begin
+	if clear = '1' then 
+		number_input:=0;
+		number_user:=2;
+		number_recording:=0;
+		state<=MENU;
+
+	elsif clk'event and clk='1' then
 	key_value := return_keyvalue(data_key);
-		---------beepÄ£¿é------------------
+		---------beepÄ£ï¿½ï¿½------------------
 		if isbeep='1' then
 			if cnt=199 then 
 				cnt := 0;isbeep <= '0';
@@ -197,19 +243,29 @@ begin
 				cnt := cnt+1;
 			end if;
 		end if;
-		---------beepÄ£¿é------------------
+		---------beepÄ£ï¿½ï¿½------------------
 		num_input<=number_input;
 		num_user<=number_user;
 		num_recording<=number_recording;
 		now_input<=current_input;
 		now_user<=current_user;
 		now_recording<=current_recording;
+			if sysadmin='1' then 
+			state<=ADMIN;
+			number_input:=0;
+			--current_user:=1;
+
+			End if;
+
+
 	CASE state IS
 		WHEN MENU => 
 			CASE key_value IS
 				WHEN choose => 
+					islock<="01";
 					state<=CHOOSE_USER;
 				WHEN add => 
+					islock<="01";
 					if number_user=4 then 
 					isbeep<='1';
 					else 
@@ -218,6 +274,7 @@ begin
 					state<=ADD_CIPHER;
 					end if;
 				WHEN recording => 
+					islock<="01";
 					if number_recording=0 then 
 					isbeep<='1';
 					else 
@@ -234,11 +291,11 @@ begin
 					end if;
 				WHEN enter => 
 					if islock="10" then 
-						islock<="01";	                                 --ËøÒÑ¿ªµÄÇé¿öÏÂ enterÉÏËø	
+						islock<="01";	                                 --ï¿½ï¿½ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ enterï¿½ï¿½ï¿½ï¿½	
 					else isbeep <= '1';
 					end if;	
 				when nothing => null;
-				WHEN OTHERS    => isbeep <= '1';
+				WHEN OTHERS    => islock<="01";isbeep <= '1';
 			END CASE;
 		WHEN CHOOSE_USER => 
 			CASE key_value IS
@@ -368,26 +425,45 @@ begin
 				number_input:=number_input+1;
 				end if;
 			WHEN enter => 
-					if state=INPUT_CIPHER then									
-								--input
-					if current_input=four_cipher(current_user) and number_input=four_cipher_lenth(current_user)then               ------?????bug
-						islock<="10";					
-						if number_recording<10 then
-							three_recording(number_recording+1)<=now_time;
+					if state=INPUT_CIPHER then
+						if current_input(1) = four_cipher(current_user)(1) then 
+							correct:=1;
+							if current_input(2) = four_cipher(current_user)(2) then
+								correct:=2;
+								if current_input(3) = four_cipher(current_user)(3) then
+									correct:=3;
+									if current_input(4) = four_cipher(current_user)(4) then 
+										correct:=4;
+										if current_input(5) = four_cipher(current_user)(5) then
+											correct:=5;
+											if current_input(6) = four_cipher(current_user)(6) then
+												correct:=6;
+											end if;
+										end if;
+									end if;
+								end if;
+							end if;
+						end if;
+
+						if correct>=number_input and number_input=four_cipher_lenth(current_user) then               ------?????bug
+						islock<="10";
+							correct:=0;
+						if number_recording<5 then
+							three_recording(number_recording+1)<=(current_user,now_time.minu,now_time.seco);      --i take a nop
 							number_recording:=number_recording+1;						
 						end if;
 						number_input:=0;
 						state<=MENU;
-					else 
+						else 
 						isbeep<='1';
 						number_input:=0;
-					end if;
-					
+						end if;
 					else 
 					    if number_input /= 0 then
 						four_cipher_lenth(current_user)<=number_input;
 						four_cipher(current_user)<=current_input;				
 						end if;
+						number_input:=0;
 						state<=MENU;
 					end if;
 			WHEN nothing => null; 
@@ -395,7 +471,6 @@ begin
 				isbeep<='1';
 				number_input:=0;
 			END CASE;
-
 		WHEN SHOW_RECORD => 
 			CASE key_value IS
 			WHEN del => state<=MENU;islcd<='0';                               --??????????????
@@ -411,6 +486,39 @@ begin
 				isbeep<='1';--beep
 			END CASE;
 
+		WHEN ADMIN => 
+		IF sysadmin='0' then 
+			state<=MENU;
+		else
+			CASE key_value IS
+			when enter =>
+					if current_user = number_user then
+						current_user:=1;
+					else 
+					current_user:=current_user+1;
+					end if;
+			WHEN del => 
+					case current_user is 
+						when 1 => isbeep<='1';
+						when 2 => isbeep<='1';
+						when 3 => 
+								if number_user=4 then
+									four_cipher_lenth(3)<=four_cipher_lenth(4);
+									four_cipher(3)<=four_cipher(4);	
+									number_user:=number_user-1;
+									current_user:=number_user;
+								else number_user:=number_user-1;
+								current_user:=number_user;
+								end if;
+						when 4 => number_user:=number_user-1;
+						current_user:=number_user;
+						when others=> null;
+						end case;
+			when nothing => null;
+			WHEN OTHERS =>
+				isbeep<='1';--beep
+			END CASE;
+		end if;
 		WHEN OTHERS    => null;
 		END CASE;
 	end if;

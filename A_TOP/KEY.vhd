@@ -32,7 +32,7 @@ begin
 			when 1=> coltmp<="1011";--第二列
 			when 2=> coltmp<="1101";--第三列
 			when 3=> coltmp<="1110";--第四列
-			when 4=> coltmp<="0000";--第四列
+			when 4=> coltmp<="0000";--判断是否有按键按下
 		end case;
 		incol<=coltmp;--给列写值，判断行信号
 	end process p2;

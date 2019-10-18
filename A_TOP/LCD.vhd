@@ -28,13 +28,13 @@ process(clk_lcd_1khz,clear)
 
 VARIABLE CNT:integer range 0 to 32;
 --VARIABLE h1:integer range 0 to 2;
-VARIABLE h2:integer range 0 to 1;
+VARIABLE h2:integer range 0 to 9;
 VARIABLE m1:integer range 0 to 5;
 VARIABLE m2:integer range 0 to 9;
 VARIABLE s1:integer range 0 to 5;
 VARIABLE s2:integer range 0 to 9;
 --VARIABLE h01:integer range 0 to 2;
-VARIABLE h02:integer range 0 to 1;
+VARIABLE h02:integer range 0 to 9;
 VARIABLE m01:integer range 0 to 5;
 VARIABLE m02:integer range 0 to 9;
 VARIABLE s01:integer range 0 to 5;
@@ -88,12 +88,12 @@ when others=> null;
      if onoff='1' then     
      CASE CNT IS
 when 18 =>RS<='0';data<=x"C0";   --设定显示的位置在第二行开头
-when 19 =>RS<='1';data<=conv_std_logic_vector(82,8);     --N
-when 20 =>RS<='1';data<=conv_std_logic_vector(69,8);     --O              :58     0-9    48-57 KG 20
-when 21 =>RS<='1';data<=conv_std_logic_vector(67,8);    --W
+when 19 =>RS<='1';data<=conv_std_logic_vector(20,8);     --N
+when 20 =>RS<='1';data<=conv_std_logic_vector(20,8);     --O              :58     0-9    48-57 KG 20
+when 21 =>RS<='1';data<=conv_std_logic_vector(h02+48,8);    --W              
 when 22 =>RS<='1';data<=conv_std_logic_vector(20,8);    --
 when 23 =>RS<='1';data<=conv_std_logic_vector(0+48,8);    --         
-when 24 =>RS<='1';data<=conv_std_logic_vector(h02+48,8);    -- 
+when 24 =>RS<='1';data<=conv_std_logic_vector(0+48,8);    -- 
 when 25 =>RS<='1';data<=conv_std_logic_vector(58,8);    --:
 when 26 =>RS<='1';data<=conv_std_logic_vector(m01+48,8);    --E 
 when 27 =>RS<='1';data<=conv_std_logic_vector(m02+48,8);    --W 

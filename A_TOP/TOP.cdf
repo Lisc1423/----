@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM1270T144) Path("C:/Users/DELL/Desktop/A_TOP10.16晚上午待改bug/A_TOP10.16晚上午待改bug/A_TOP/") File("TOP.pof") MfrSpec(OpMask(7) SEC_Device(EPM1270T144) Child_OpMask(2 7 7));
+		Device PartName(EPM1270T144) Path("E:/学习之lunch八糟/大三上/数电实验下/A_TOP/") File("TOP.pof") MfrSpec(OpMask(7) SEC_Device(EPM1270T144) Child_OpMask(2 7 7));
 
 ChainEnd;
 

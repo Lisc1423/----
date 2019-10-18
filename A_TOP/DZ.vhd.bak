@@ -5,6 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity DZ is
 port(
      clk_dz_1khz:in std_logic;
+     dzclear:in std_logic;     
      row:out std_logic_vector(7 downto 0);
      col_r:out std_logic_vector(7 downto 0);
      col_g:out std_logic_vector(7 downto 0);
@@ -14,10 +15,11 @@ end DZ;
 architecture one of DZ is
 signal tmp:integer range 0 to 7;
 begin
-process(clk,onoff)
+process(clk_dz_1khz,onoff)
 begin
-   
-if clk'event and clk='1'then
+if dzclear = '1' then
+col_r <= "00000000";row <= "00000000";col_g <= "00000000";
+elsif clk_dz_1khz'event and clk_dz_1khz='1'then
 if tmp=7 then
 tmp<=0;
 else

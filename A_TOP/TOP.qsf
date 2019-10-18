@@ -55,7 +55,7 @@ set_global_assignment -name MISC_FILE "E:/学习之lunch八糟/大三上/数电实验下/A_TO
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_79 -to beep_led
 set_location_assignment PIN_60 -to beep_out
-set_location_assignment PIN_124 -to clear
+set_location_assignment PIN_134 -to clear
 set_location_assignment PIN_18 -to clk
 set_location_assignment PIN_38 -to dzcolgre_out[7]
 set_location_assignment PIN_39 -to dzcolgre_out[6]
@@ -133,3 +133,5 @@ set_global_assignment -name VHDL_FILE CLK.vhd
 set_global_assignment -name VHDL_FILE DZ.vhd
 set_global_assignment -name VHDL_FILE KEY.vhd
 set_global_assignment -name VHDL_FILE STATE.vhd
+set_location_assignment PIN_144 -to menuled_out[6]
+set_location_assignment PIN_125 -to systemadmin

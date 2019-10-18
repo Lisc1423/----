@@ -5,11 +5,12 @@ ENTITY TOP IS
 PORT(
 clk :in std_logic;
 clear:in std_logic;
+systemadmin: in std_logic;
 keyrow_in:in std_logic_vector(3 downto 0);
 keycol_out:out std_logic_vector(3 downto 0);
 beep_out:out STD_LOGIC;
 beep_led:out STD_LOGIC;
-menuled_out:out STD_LOGIC_vector(5 downto 0);
+menuled_out:out STD_LOGIC_vector(6 downto 0);
 smgdata_out:out STD_LOGIC_vector(6 downto 0);
 smgcat_out:out STD_LOGIC_vector(7 downto 0);
 dzrow_out:out std_logic_vector(7 downto 0);
@@ -33,6 +34,7 @@ end component;
 component DZ
 port(
 clk_dz_1khz:in std_logic;
+dzclear:in std_logic;  
 row:out std_logic_vector(7 downto 0);
 col_r:out std_logic_vector(7 downto 0);
 col_g:out std_logic_vector(7 downto 0);
@@ -80,9 +82,11 @@ end component;
 component STATE
 port(
 clk: in std_logic;
+clear: in std_logic;
 clk_1hz: in std_logic;
+sysadmin: in std_logic;
 data_key:in std_logic_vector(4 downto 0);
-data_menuled: out std_logic_vector(5 downto 0);
+data_menuled: out std_logic_vector(6 downto 0);
 data_beep: out std_logic;
 data_dz: out std_logic_vector(1 downto 0);
 data_smg:out smg_eight;
@@ -121,7 +125,7 @@ SIGNAL top_keyrow:std_logic_vector(3 downto 0);
 SIGNAL top_keycol:std_logic_vector(3 downto 0);
 SIGNAL top_keydata:std_logic_vector(4 downto 0);
 
-SIGNAL top_menuled:std_logic_vector(5 downto 0);
+SIGNAL top_menuled:std_logic_vector(6 downto 0);
 SIGNAL top_clear:std_logic;
 
 BEGIN
@@ -143,10 +147,10 @@ RS_out<=top_lcdrs;
 lcd_out<=top_lcddata;
 
 	u1:SMG   port map(clk_smg_1khz=>top_1khz, a=>top_smg, b=>top_smgdata, c=>top_smgcat);
-	u2:DZ    port map(clk_dz_1khz=>top_1khz, row=>top_dzrow,col_r=>top_dzcolr,col_g=>top_dzcolg,onoff=>top_dzonoff);
+	u2:DZ    port map(clk_dz_1khz=>top_1khz,dzclear=>top_clear, row=>top_dzrow,col_r=>top_dzcolr,col_g=>top_dzcolg,onoff=>top_dzonoff);
 	u3:BEEP  port map(clk_beep_1khz=>top_1khz,onoff=>top_beeponoff,spks=>top_beepspks,led=>top_beepled);
 	u4:LCD   port map(clk_lcd_1khz=>top_1khz,clear=>top_clear,onoff=>top_lcdonoff,t1=>top_lcdtime,t2=>top_lcdtime0,RW=>top_lcdrw,E=>top_lcde,RS=>top_lcdrs,data=>top_lcddata);
 	u5:KEY   port map(inclk=>top_1khz, inrow=>top_keyrow,incol=>top_keycol,outshumaguan=>top_keydata);
-	u6:CLKD   port map(clk1=>top_1mhz,clear=>top_clear,clk_1hz=>top_1hz, clk_1khz=>top_1khz);
-	u7:STATE port map(clk=>top_1khz,clk_1hz=>top_1hz,data_key=>top_keydata,data_menuled=>top_menuled,data_beep=>top_beeponoff,data_dz=>top_dzonoff,data_smg=>top_smg,data_lcd=>top_lcdtime,data_lcd0=>top_lcdtime0,data_lcd0ready=>top_lcdonoff);
+	u6:CLKD  port map(clk1=>top_1mhz,clear=>top_clear,clk_1hz=>top_1hz, clk_1khz=>top_1khz);
+	u7:STATE port map(clk=>top_1khz,clear=>top_clear,clk_1hz=>top_1hz,sysadmin=>systemadmin,data_key=>top_keydata,data_menuled=>top_menuled,data_beep=>top_beeponoff,data_dz=>top_dzonoff,data_smg=>top_smg,data_lcd=>top_lcdtime,data_lcd0=>top_lcdtime0,data_lcd0ready=>top_lcdonoff);
 END a_top;

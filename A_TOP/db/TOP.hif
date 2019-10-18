@@ -19,57 +19,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-DZ
-# storage
-db|TOP.(2).cnf
-db|TOP.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-DZ.vhd
-faa2f0448bc7fec23e9610a8edb2ba2d
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(row)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(col_r)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(col_g)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(onoff)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-DZ:u2
-}
-# lmf
-d:|quartus 9.0|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 CLKD
 # storage
 db|TOP.(6).cnf
@@ -1042,7 +991,7 @@ USR
 }
 # include_file {
 STRUCT.vhd
-b420428a993664ea7b5e3b373bbbdc
+97c38929711b9c5721795a2a7caff578
 }
 # hierarchies {
 SMG:u1
@@ -1065,7 +1014,7 @@ ON
 # case_insensitive
 # source_file
 LCD.vhd
-bd5c5cab59ebdb351458e77dd528967e
+b7d84cbeb3cb71a94b09c5bd38d374f
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1085,47 +1034,10 @@ USR
 }
 # include_file {
 STRUCT.vhd
-b420428a993664ea7b5e3b373bbbdc
+97c38929711b9c5721795a2a7caff578
 }
 # hierarchies {
 LCD:u4
-}
-# lmf
-d:|quartus 9.0|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-TOP
-# storage
-db|TOP.(0).cnf
-db|TOP.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-TOP.vhd
-3d9e5e4baa1e5cd1c754c821eaf8f6
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-STRUCT.vhd
-b420428a993664ea7b5e3b373bbbdc
-}
-# hierarchies {
-|
 }
 # lmf
 d:|quartus 9.0|quartus|lmf|maxplus2.lmf
@@ -1145,7 +1057,7 @@ ON
 # case_insensitive
 # source_file
 KEY.vhd
-d2f17844d248f4f413995d355d53cd4
+9c6d6c891ea07abe40e3bcd32657de5d
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1192,7 +1104,7 @@ ON
 # case_insensitive
 # source_file
 STATE.vhd
-dc69ff107b81def2e62ebb5da96ee40
+51925ab9e11c7c379813a4a58d3afbe5
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1210,7 +1122,7 @@ ON
 PARAMETER_STRING
 USR
  constraint(data_menuled)
-5 downto 0
+6 downto 0
 PARAMETER_STRING
 USR
  constraint(data_dz)
@@ -1224,10 +1136,98 @@ USR
 }
 # include_file {
 STRUCT.vhd
-b420428a993664ea7b5e3b373bbbdc
+97c38929711b9c5721795a2a7caff578
 }
 # hierarchies {
 STATE:u7
+}
+# lmf
+d:|quartus 9.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+TOP
+# storage
+db|TOP.(0).cnf
+db|TOP.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+TOP.vhd
+275797967bb775ba2458e8b3af9ce3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+STRUCT.vhd
+97c38929711b9c5721795a2a7caff578
+}
+# hierarchies {
+|
+}
+# lmf
+d:|quartus 9.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+DZ
+# storage
+db|TOP.(2).cnf
+db|TOP.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+DZ.vhd
+da206f1a8172d59abec816e83629d175
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(row)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_r)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col_g)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(onoff)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DZ:u2
 }
 # lmf
 d:|quartus 9.0|quartus|lmf|maxplus2.lmf

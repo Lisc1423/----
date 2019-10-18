@@ -191,8 +191,8 @@ keycol_out[3]                : 120       : output : 3.3-V LVTTL       :         
 GND*                         : 121       :        :                   :         : 2         :                
 GND*                         : 122       :        :                   :         : 2         :                
 GND*                         : 123       :        :                   :         : 2         :                
-clear                        : 124       : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : 125       :        :                   :         : 2         :                
+GND*                         : 124       :        :                   :         : 2         :                
+systemadmin                  : 125       : input  : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : 126       : power  :                   : 2.5V/3.3V :           :                
 GND*                         : 127       :        :                   :         : 2         :                
 GNDINT                       : 128       : gnd    :                   :         :           :                
@@ -201,7 +201,7 @@ GND*                         : 130       :        :                   :         
 GND*                         : 131       :        :                   :         : 2         :                
 GND*                         : 132       :        :                   :         : 2         :                
 GND*                         : 133       :        :                   :         : 2         :                
-GND*                         : 134       :        :                   :         : 2         :                
+clear                        : 134       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GNDIO                        : 135       : gnd    :                   :         :           :                
 VCCIO2                       : 136       : power  :                   : 3.3V    : 2         :                
 GND*                         : 137       :        :                   :         : 2         :                
@@ -211,4 +211,4 @@ GND*                         : 140       :        :                   :         
 GND*                         : 141       :        :                   :         : 2         :                
 GND*                         : 142       :        :                   :         : 2         :                
 GND*                         : 143       :        :                   :         : 2         :                
-GND*                         : 144       :        :                   :         : 2         :                
+menuled_out[6]               : 144       : output : 3.3-V LVTTL       :         : 2         : Y              
