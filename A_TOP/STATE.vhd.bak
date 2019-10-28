@@ -511,6 +511,7 @@ begin
 								current_user:=number_user;
 								end if;
 						when 4 => number_user:=number_user-1;
+						current_user:=number_user;
 						when others=> null;
 						end case;
 			when nothing => null;

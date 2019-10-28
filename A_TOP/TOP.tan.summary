@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 6.445 ns
-From           : clear
-To             : SMG:u1|b[0]
+Actual Time    : 5.937 ns
+From           : systemadmin
+To             : STATE:u7|state.MENU
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.862 ns
-From           : DZ:u2|col_g[3]
-To             : dzcolgre_out[3]
+Actual Time    : 25.326 ns
+From           : DZ:u2|row[3]
+To             : dzrow_out[3]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 12.851 ns
+Actual Time    : 10.674 ns
 From           : clear
-To             : menuled_out[3]
+To             : menuled_out[5]
 From Clock     : --
 To Clock       : --
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.175 ns
+Actual Time    : 6.540 ns
 From           : systemadmin
-To             : STATE:u7|four_cipher_lenth[2][1]
+To             : STATE:u7|four_cipher_lenth[4][1]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 21.80 MHz ( period = 45.870 ns )
-From           : STATE:u7|issmg[5][0]
-To             : SMG:u1|b[0]
+Actual Time    : 21.08 MHz ( period = 47.432 ns )
+From           : STATE:u7|issmg[3][1]
+To             : SMG:u1|b[5]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0
@@ -56,11 +56,11 @@ Type           : Clock Hold: 'clk'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : STATE:u7|now_input[6][0]
-To             : STATE:u7|issmg[8][0]
+From           : STATE:u7|now_input[6][3]
+To             : STATE:u7|issmg[8][3]
 From Clock     : clk
 To Clock       : clk
-Failed Paths   : 658
+Failed Paths   : 837
 
 Type           : Total number of failed paths
 Slack          : 
@@ -70,7 +70,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 658
+Failed Paths   : 837
 
 --------------------------------------------------------------------------------------
 

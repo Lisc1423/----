@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TOP
-Fri Oct 18 16:55:42 2019
+Tue Oct 29 01:29:30 2019
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -49,12 +49,12 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Oct 18 16:55:42 2019        ;
+; Analysis & Synthesis Status ; Successful - Tue Oct 29 01:29:30 2019        ;
 ; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name               ; TOP                                          ;
 ; Top-level Entity Name       ; TOP                                          ;
 ; Family                      ; MAX II                                       ;
-; Total logic elements        ; 1,393                                        ;
+; Total logic elements        ; 1,423                                        ;
 ; Total pins                  ; 70                                           ;
 ; Total virtual pins          ; 0                                            ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
@@ -159,32 +159,32 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Total logic elements                        ; 1393           ;
-;     -- Combinational with no register       ; 999            ;
-;     -- Register only                        ; 197            ;
-;     -- Combinational with a register        ; 197            ;
+; Total logic elements                        ; 1423           ;
+;     -- Combinational with no register       ; 1022           ;
+;     -- Register only                        ; 198            ;
+;     -- Combinational with a register        ; 203            ;
 ;                                             ;                ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 730            ;
-;     -- 3 input functions                    ; 206            ;
-;     -- 2 input functions                    ; 191            ;
-;     -- 1 input functions                    ; 69             ;
+;     -- 4 input functions                    ; 738            ;
+;     -- 3 input functions                    ; 220            ;
+;     -- 2 input functions                    ; 197            ;
+;     -- 1 input functions                    ; 70             ;
 ;     -- 0 input functions                    ; 0              ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 1305           ;
+;     -- normal mode                          ; 1335           ;
 ;     -- arithmetic mode                      ; 88             ;
 ;     -- qfbk mode                            ; 0              ;
 ;     -- register cascade mode                ; 0              ;
 ;     -- synchronous clear/load mode          ; 13             ;
 ;     -- asynchronous clear/load mode         ; 50             ;
 ;                                             ;                ;
-; Total registers                             ; 394            ;
+; Total registers                             ; 401            ;
 ; Total logic cells in carry chains           ; 114            ;
 ; I/O pins                                    ; 70             ;
 ; Maximum fan-out node                        ; CLKD:u6|clk_1k ;
-; Maximum fan-out                             ; 373            ;
-; Total fan-out                               ; 5004           ;
+; Maximum fan-out                             ; 376            ;
+; Total fan-out                               ; 5102           ;
 ; Average fan-out                             ; 3.42           ;
 +---------------------------------------------+----------------+
 
@@ -194,12 +194,12 @@ applicable agreement for further details.
 +-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                               ; Library Name ;
 +-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |TOP                                      ; 1393 (0)    ; 394          ; 0          ; 70   ; 0            ; 999 (0)      ; 197 (0)           ; 197 (0)          ; 114 (0)         ; 0 (0)      ; |TOP                                                                                                                              ; work         ;
+; |TOP                                      ; 1423 (0)    ; 401          ; 0          ; 70   ; 0            ; 1022 (0)     ; 198 (0)           ; 203 (0)          ; 114 (0)         ; 0 (0)      ; |TOP                                                                                                                              ; work         ;
 ;    |BEEP:u3|                              ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TOP|BEEP:u3                                                                                                                      ; work         ;
 ;    |CLKD:u6|                              ; 44 (44)     ; 20           ; 0          ; 0    ; 0            ; 24 (24)      ; 6 (6)             ; 14 (14)          ; 18 (18)         ; 0 (0)      ; |TOP|CLKD:u6                                                                                                                      ; work         ;
-;    |DZ:u2|                                ; 52 (52)     ; 3            ; 0          ; 0    ; 0            ; 49 (49)      ; 2 (2)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TOP|DZ:u2                                                                                                                        ; work         ;
+;    |DZ:u2|                                ; 63 (63)     ; 7            ; 0          ; 0    ; 0            ; 56 (56)      ; 1 (1)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |TOP|DZ:u2                                                                                                                        ; work         ;
 ;    |KEY:u5|                               ; 36 (36)     ; 18           ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |TOP|KEY:u5                                                                                                                       ; work         ;
-;    |LCD:u4|                               ; 247 (123)   ; 12           ; 0          ; 0    ; 0            ; 235 (111)    ; 3 (3)             ; 9 (9)            ; 72 (4)          ; 0 (0)      ; |TOP|LCD:u4                                                                                                                       ; work         ;
+;    |LCD:u4|                               ; 254 (130)   ; 15           ; 0          ; 0    ; 0            ; 239 (115)    ; 5 (5)             ; 10 (10)          ; 72 (4)          ; 0 (0)      ; |TOP|LCD:u4                                                                                                                       ; work         ;
 ;       |lpm_divide:Div0|                   ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0                                                                                                       ; work         ;
 ;          |lpm_divide_ovl:auto_generated|  ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated                                                                         ; work         ;
 ;             |sign_div_unsign_9kh:divider| ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div0|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider                                             ; work         ;
@@ -229,7 +229,7 @@ applicable agreement for further details.
 ;                   |add_sub_i7c:add_sub_4| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_4 ; work         ;
 ;                   |add_sub_i7c:add_sub_5| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |TOP|LCD:u4|lpm_divide:Div3|lpm_divide_ovl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_die:divider|add_sub_i7c:add_sub_5 ; work         ;
 ;    |SMG:u1|                               ; 110 (110)   ; 19           ; 0          ; 0    ; 0            ; 91 (91)      ; 3 (3)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |TOP|SMG:u1                                                                                                                       ; work         ;
-;    |STATE:u7|                             ; 903 (903)   ; 321          ; 0          ; 0    ; 0            ; 582 (582)    ; 183 (183)         ; 138 (138)        ; 24 (24)         ; 0 (0)      ; |TOP|STATE:u7                                                                                                                     ; work         ;
+;    |STATE:u7|                             ; 915 (915)   ; 321          ; 0          ; 0    ; 0            ; 594 (594)    ; 183 (183)         ; 138 (138)        ; 24 (24)         ; 0 (0)      ; |TOP|STATE:u7                                                                                                                     ; work         ;
 +-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -281,85 +281,81 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+----------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal  ; Free of Timing Hazards ;
 +-----------------------------------------------------+----------------------+------------------------+
-; DZ:u2|row[0]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[1]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[2]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[3]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[4]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[5]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|row[6]                                        ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_r[0]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[1]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[2]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[3]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[4]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[5]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[6]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_r[7]                                      ; DZ:u2|row[7]~1       ; yes                    ;
-; DZ:u2|col_g[0]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[1]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[2]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[3]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[4]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[5]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[6]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; DZ:u2|col_g[7]                                      ; DZ:u2|row[7]~2       ; yes                    ;
-; STATE:u7|issmg[5][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[5][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[5][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[5][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[3][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[3][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[3][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[3][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[7][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[7][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[7][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[7][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[4][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[4][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[4][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[4][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[6][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[6][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[6][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[6][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[8][0]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[8][1]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[8][2]                                ; STATE:u7|Selector154 ; yes                    ;
-; STATE:u7|issmg[8][3]                                ; STATE:u7|Selector154 ; yes                    ;
-; Number of user-specified and inferred latches = 47  ;                      ;                        ;
+; DZ:u2|row[0]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[1]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[2]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[3]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[4]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[5]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[6]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|row[7]                                        ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_r[0]                                      ; DZ:u2|Equal3         ; yes                    ;
+; DZ:u2|col_r[1]                                      ; DZ:u2|Equal3         ; yes                    ;
+; DZ:u2|col_r[2]                                      ; DZ:u2|row[7]~47      ; yes                    ;
+; DZ:u2|col_r[3]                                      ; DZ:u2|row[7]~47      ; yes                    ;
+; DZ:u2|col_r[4]                                      ; DZ:u2|row[7]~47      ; yes                    ;
+; DZ:u2|col_r[5]                                      ; DZ:u2|row[7]~47      ; yes                    ;
+; DZ:u2|col_r[6]                                      ; DZ:u2|row[7]~47      ; yes                    ;
+; DZ:u2|col_r[7]                                      ; DZ:u2|Equal3         ; yes                    ;
+; DZ:u2|col_g[1]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_g[2]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_g[3]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_g[4]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_g[5]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; DZ:u2|col_g[6]                                      ; DZ:u2|row[7]~53      ; yes                    ;
+; STATE:u7|issmg[5][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[5][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[5][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[5][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[3][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[3][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[3][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[3][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[7][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[7][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[7][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[7][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[4][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[4][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[4][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[4][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[6][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[6][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[6][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[6][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[8][0]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[8][1]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[8][2]                                ; STATE:u7|Selector155 ; yes                    ;
+; STATE:u7|issmg[8][3]                                ; STATE:u7|Selector155 ; yes                    ;
+; Number of user-specified and inferred latches = 46  ;                      ;                        ;
 +-----------------------------------------------------+----------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------+
-; Registers Removed During Synthesis                                ;
-+----------------------------------------+--------------------------+
-; Register name                          ; Reason for Removal       ;
-+----------------------------------------+--------------------------+
-; STATE:u7|\pstate:key_value.one         ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.two         ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.three       ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.four        ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.five        ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.six         ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.seven       ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.eight       ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.nine        ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.zero        ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.enter       ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.del         ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.choose      ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.add         ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.modify      ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.recording   ; Lost fanout              ;
-; STATE:u7|\pstate:key_value.nothing     ; Lost fanout              ;
-; LCD:u4|CNT[0]                          ; Merged with DZ:u2|tmp[0] ;
-; LCD:u4|CNT[1]                          ; Merged with DZ:u2|tmp[1] ;
-; LCD:u4|CNT[2]                          ; Merged with DZ:u2|tmp[2] ;
-; Total Number of Removed Registers = 20 ;                          ;
-+----------------------------------------+--------------------------+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; STATE:u7|\pstate:key_value.one         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.two         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.three       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.four        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.five        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.six         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.seven       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.eight       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.nine        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.zero        ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.enter       ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.del         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.choose      ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.add         ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.modify      ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.recording   ; Lost fanout        ;
+; STATE:u7|\pstate:key_value.nothing     ; Lost fanout        ;
+; Total Number of Removed Registers = 17 ;                    ;
++----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -367,12 +363,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 394   ;
+; Total registers                              ; 401   ;
 ; Number of registers using Synchronous Clear  ; 13    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 50    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 300   ;
+; Number of registers using Clock Enable       ; 304   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -382,27 +378,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
+; STATE:u7|four_cipher[2][1][1]           ; 2       ;
+; STATE:u7|\pstate:current_user[0]        ; 61      ;
+; STATE:u7|four_cipher[3][1][1]           ; 2       ;
+; STATE:u7|four_cipher[1][1][0]           ; 2       ;
+; STATE:u7|four_cipher[3][1][0]           ; 2       ;
+; STATE:u7|four_cipher[4][1][2]           ; 3       ;
 ; STATE:u7|four_cipher[1][2][0]           ; 2       ;
-; STATE:u7|\pstate:current_user[0]        ; 60      ;
 ; STATE:u7|four_cipher[3][2][0]           ; 2       ;
 ; STATE:u7|four_cipher[4][2][2]           ; 3       ;
 ; STATE:u7|four_cipher[2][2][1]           ; 2       ;
 ; STATE:u7|four_cipher[3][2][1]           ; 2       ;
+; STATE:u7|four_cipher[2][4][1]           ; 2       ;
+; STATE:u7|four_cipher[3][4][1]           ; 2       ;
 ; STATE:u7|four_cipher[1][4][0]           ; 2       ;
 ; STATE:u7|four_cipher[3][4][0]           ; 2       ;
 ; STATE:u7|four_cipher[4][4][2]           ; 3       ;
-; STATE:u7|four_cipher[2][4][1]           ; 2       ;
-; STATE:u7|four_cipher[3][4][1]           ; 2       ;
 ; STATE:u7|four_cipher[2][3][1]           ; 2       ;
 ; STATE:u7|four_cipher[3][3][1]           ; 2       ;
 ; STATE:u7|four_cipher[1][3][0]           ; 2       ;
 ; STATE:u7|four_cipher[3][3][0]           ; 2       ;
 ; STATE:u7|four_cipher[4][3][2]           ; 3       ;
-; STATE:u7|four_cipher[1][1][0]           ; 2       ;
-; STATE:u7|four_cipher[3][1][0]           ; 2       ;
-; STATE:u7|four_cipher[4][1][2]           ; 3       ;
-; STATE:u7|four_cipher[2][1][1]           ; 2       ;
-; STATE:u7|four_cipher[3][1][1]           ; 2       ;
 ; STATE:u7|four_cipher[1][5][0]           ; 2       ;
 ; STATE:u7|four_cipher[3][5][0]           ; 2       ;
 ; STATE:u7|four_cipher[4][5][2]           ; 3       ;
@@ -418,10 +414,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; STATE:u7|four_cipher_lenth[4][2]        ; 3       ;
 ; STATE:u7|four_cipher_lenth[3][2]        ; 2       ;
 ; STATE:u7|\pstate:number_user[1]         ; 12      ;
-; STATE:u7|islock[0]                      ; 13      ;
+; STATE:u7|islock[0]                      ; 11      ;
 ; SMG:u1|cnt[0]                           ; 14      ;
 ; STATE:u7|num_user[1]                    ; 1       ;
-; STATE:u7|now_user[0]                    ; 42      ;
+; STATE:u7|now_user[0]                    ; 41      ;
 ; KEY:u5|\p4:lastkey[4]                   ; 1       ;
 ; KEY:u5|\p4:lastkey[2]                   ; 1       ;
 ; KEY:u5|\p4:lastkey[0]                   ; 1       ;
@@ -436,25 +432,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |TOP|SMG:u1|c[0]                           ;
-; 16:1               ; 7 bits    ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |TOP|SMG:u1|b[4]                           ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:current_recording[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP|DZ:u2|c_cnt[1]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP|DZ:u2|p_cnt[0]                        ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |TOP|SMG:u1|c[4]                           ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |TOP|SMG:u1|b[1]                           ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:current_recording[0] ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; Yes        ; |TOP|STATE:u7|\pstate:number_input[1]      ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |TOP|STATE:u7|rec_time.minu[4]             ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |TOP|STATE:u7|rec_time.hour[3]             ;
 ; 29:1               ; 3 bits    ; 57 LEs        ; 9 LEs                ; 48 LEs                 ; Yes        ; |TOP|KEY:u5|keykey[3]                      ;
-; 11:1               ; 14 bits   ; 98 LEs        ; 14 LEs               ; 84 LEs                 ; Yes        ; |TOP|STATE:u7|four_cipher[3][6][2]         ;
-; 80:1               ; 4 bits    ; 212 LEs       ; 48 LEs               ; 164 LEs                ; Yes        ; |TOP|LCD:u4|data[7]                        ;
-; 11:1               ; 13 bits   ; 91 LEs        ; 13 LEs               ; 78 LEs                 ; Yes        ; |TOP|STATE:u7|four_cipher_lenth[3][2]      ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux107                       ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux25                        ;
+; 11:1               ; 14 bits   ; 98 LEs        ; 14 LEs               ; 84 LEs                 ; Yes        ; |TOP|STATE:u7|four_cipher_lenth[3][1]      ;
+; 80:1               ; 4 bits    ; 212 LEs       ; 48 LEs               ; 164 LEs                ; Yes        ; |TOP|LCD:u4|data[5]                        ;
+; 11:1               ; 13 bits   ; 91 LEs        ; 13 LEs               ; 78 LEs                 ; Yes        ; |TOP|STATE:u7|four_cipher[3][2][0]         ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux117                       ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Mux40                        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TOP|STATE:u7|correct~11                   ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |TOP|STATE:u7|Selector153                  ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |TOP|STATE:u7|Selector142                  ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |TOP|STATE:u7|Selector139                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |TOP|STATE:u7|Selector152                  ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |TOP|STATE:u7|Selector148                  ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |TOP|STATE:u7|Selector139                  ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TOP|LCD:u4|Add1                           ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |TOP|STATE:u7|Selector134                  ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Selector132                  ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |TOP|STATE:u7|Selector69                   ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 18 LEs               ; 3 LEs                  ; No         ; |TOP|STATE:u7|Selector135                  ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 27 LEs               ; 0 LEs                  ; No         ; |TOP|STATE:u7|Selector132                  ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |TOP|STATE:u7|Selector68                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
@@ -556,7 +554,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 18 16:55:36 2019
+    Info: Processing started: Tue Oct 29 01:29:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TOP -c TOP
 Info: Found 2 design units, including 1 entities, in source file TOP.vhd
     Info: Found design unit 1: TOP-a_top
@@ -588,37 +586,46 @@ Info: Found 2 design units, including 1 entities, in source file STATE.vhd
 Info: Elaborating entity "TOP" for the top level hierarchy
 Info: Elaborating entity "SMG" for hierarchy "SMG:u1"
 Info: Elaborating entity "DZ" for hierarchy "DZ:u2"
-Warning (10492): VHDL Process Statement warning at DZ.vhd(20): signal "dzclear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DZ.vhd(31): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DZ.vhd(45): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DZ.vhd(58): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at DZ.vhd(18): inferring latch(es) for signal or variable "col_r", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at DZ.vhd(18): inferring latch(es) for signal or variable "row", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at DZ.vhd(18): inferring latch(es) for signal or variable "col_g", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "col_g[0]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[1]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[2]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[3]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[4]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[5]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[6]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_g[7]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[0]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[1]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[2]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[3]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[4]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[5]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[6]" at DZ.vhd(18)
-Info (10041): Inferred latch for "row[7]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[0]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[1]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[2]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[3]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[4]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[5]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[6]" at DZ.vhd(18)
-Info (10041): Inferred latch for "col_r[7]" at DZ.vhd(18)
+Warning (10492): VHDL Process Statement warning at DZ.vhd(48): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(61): signal "p_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(62): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(74): signal "p_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(75): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(87): signal "p_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(88): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(100): signal "c_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(101): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(113): signal "c_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(114): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(126): signal "c_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DZ.vhd(127): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at DZ.vhd(37): inferring latch(es) for signal or variable "col_r", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DZ.vhd(37): inferring latch(es) for signal or variable "row", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DZ.vhd(37): inferring latch(es) for signal or variable "col_g", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "col_g[0]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[1]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[2]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[3]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[4]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[5]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[6]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_g[7]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[0]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[1]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[2]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[3]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[4]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[5]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[6]" at DZ.vhd(37)
+Info (10041): Inferred latch for "row[7]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[0]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[1]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[2]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[3]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[4]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[5]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[6]" at DZ.vhd(37)
+Info (10041): Inferred latch for "col_r[7]" at DZ.vhd(37)
 Info: Elaborating entity "BEEP" for hierarchy "BEEP:u3"
 Info: Elaborating entity "LCD" for hierarchy "LCD:u4"
 Info: Elaborating entity "KEY" for hierarchy "KEY:u5"
@@ -697,56 +704,43 @@ Info: Found 1 design units, including 1 entities, in source file db/add_sub_h7c.
 Info: Found 1 design units, including 1 entities, in source file db/add_sub_i7c.tdf
     Info: Found entity 1: add_sub_i7c
 Info: Duplicate LATCH primitives merged into single LATCH primitive
-    Info: Duplicate LATCH primitive "DZ:u2|row[1]" merged with LATCH primitive "DZ:u2|row[0]"
-    Info: Duplicate LATCH primitive "DZ:u2|row[2]" merged with LATCH primitive "DZ:u2|row[0]"
-    Info: Duplicate LATCH primitive "DZ:u2|row[3]" merged with LATCH primitive "DZ:u2|row[0]"
-    Info: Duplicate LATCH primitive "DZ:u2|row[5]" merged with LATCH primitive "DZ:u2|row[4]"
+    Info: Duplicate LATCH primitive "DZ:u2|col_g[5]" merged with LATCH primitive "DZ:u2|col_g[4]"
 Warning: Latch DZ:u2|row[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
+Warning: Latch DZ:u2|row[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
+Warning: Latch DZ:u2|row[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
+Warning: Latch DZ:u2|row[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|row[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
+Warning: Latch DZ:u2|row[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|row[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_r[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_r[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
+Warning: Latch DZ:u2|row[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|col_r[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|col_r[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|col_r[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[1]
 Warning: Latch DZ:u2|col_r[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|col_r[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_r[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-    Warning: Ports ENA and CLR on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_g[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|p_cnt[0]
 Warning: Latch DZ:u2|col_g[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|c_cnt[0]
 Warning: Latch DZ:u2|col_g[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|c_cnt[0]
 Warning: Latch DZ:u2|col_g[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|c_cnt[0]
 Warning: Latch DZ:u2|col_g[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_g[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|c_cnt[1]
 Warning: Latch DZ:u2|col_g[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
-Warning: Latch DZ:u2|col_g[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|islock[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal DZ:u2|c_cnt[0]
 Warning: Latch STATE:u7|issmg[5][0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|state.ADMIN
 Warning: Latch STATE:u7|issmg[5][1] has unsafe behavior
@@ -796,7 +790,8 @@ Warning: Latch STATE:u7|issmg[8][2] has unsafe behavior
 Warning: Latch STATE:u7|issmg[8][3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal STATE:u7|state.ADMIN
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dzrow_out[7]" is stuck at VCC
+    Warning (13410): Pin "dzcolgre_out[0]" is stuck at GND
+    Warning (13410): Pin "dzcolgre_out[7]" is stuck at GND
     Warning (13410): Pin "RW_out" is stuck at GND
 Info: Registers with preset signals will power-up high
 Info: 17 registers lost all their fanouts during netlist optimizations. The first 17 are displayed below.
@@ -817,13 +812,13 @@ Info: 17 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "STATE:u7|\pstate:key_value.modify" lost all its fanouts during netlist optimizations.
     Info: Register "STATE:u7|\pstate:key_value.recording" lost all its fanouts during netlist optimizations.
     Info: Register "STATE:u7|\pstate:key_value.nothing" lost all its fanouts during netlist optimizations.
-Info: Implemented 1463 device resources after synthesis - the final resource count might be different
+Info: Implemented 1493 device resources after synthesis - the final resource count might be different
     Info: Implemented 7 input pins
     Info: Implemented 63 output pins
-    Info: Implemented 1393 logic cells
+    Info: Implemented 1423 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 124 warnings
-    Info: Peak virtual memory: 276 megabytes
-    Info: Processing ended: Fri Oct 18 16:55:42 2019
+    Info: Peak virtual memory: 259 megabytes
+    Info: Processing ended: Tue Oct 29 01:29:30 2019
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 

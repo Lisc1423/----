@@ -118,22 +118,22 @@ begin
 				issmg(6)<=10;issmg(7)<=10;issmg(8)<=10;
 			when 1 =>
 				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-				issmg(6)<=10;issmg(7)<=10;issmg(8)<=now_input(1);
+				issmg(6)<=10;issmg(7)<=10;issmg(8)<=11;
 			when 2 =>
 				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-				issmg(6)<=10;issmg(7)<=now_input(1);issmg(8)<=now_input(2);
+				issmg(6)<=10;issmg(7)<=11;issmg(8)<=11;
 			when 3 =>
 				issmg(3)<=10;issmg(4)<=10;issmg(5)<=10;
-				issmg(6)<=now_input(1);issmg(7)<=now_input(2);issmg(8)<=now_input(3);
+				issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
 			when 4 =>
-				issmg(3)<=10;issmg(4)<=10;issmg(5)<=now_input(1);
-				issmg(6)<=now_input(2);issmg(7)<=now_input(3);issmg(8)<=now_input(4);
+				issmg(3)<=10;issmg(4)<=10;issmg(5)<=11;
+				issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
 			when 5 =>
-				issmg(3)<=10;issmg(4)<=now_input(1);issmg(5)<=now_input(2);
-				issmg(6)<=now_input(3);issmg(7)<=now_input(4);issmg(8)<=now_input(5);
+				issmg(3)<=10;issmg(4)<=11;issmg(5)<=11;
+				issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
 			when 6 =>
-				issmg(3)<=now_input(1);issmg(4)<=now_input(2);issmg(5)<=now_input(3);
-				issmg(6)<=now_input(4);issmg(7)<=now_input(5);issmg(8)<=now_input(6);
+				issmg(3)<=11;issmg(4)<=11;issmg(5)<=11;
+				issmg(6)<=11;issmg(7)<=11;issmg(8)<=11;
 			when others => NULL;
 			END case;
 		WHEN ADD_CIPHER =>

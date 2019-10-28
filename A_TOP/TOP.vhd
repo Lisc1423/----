@@ -34,7 +34,7 @@ end component;
 component DZ
 port(
 clk_dz_1khz:in std_logic;
-dzclear:in std_logic;  
+clk_1hz:in std_logic;
 row:out std_logic_vector(7 downto 0);
 col_r:out std_logic_vector(7 downto 0);
 col_g:out std_logic_vector(7 downto 0);
@@ -147,7 +147,7 @@ RS_out<=top_lcdrs;
 lcd_out<=top_lcddata;
 
 	u1:SMG   port map(clk_smg_1khz=>top_1khz, a=>top_smg, b=>top_smgdata, c=>top_smgcat);
-	u2:DZ    port map(clk_dz_1khz=>top_1khz,dzclear=>top_clear, row=>top_dzrow,col_r=>top_dzcolr,col_g=>top_dzcolg,onoff=>top_dzonoff);
+	u2:DZ    port map(clk_dz_1khz=>top_1khz,clk_1hz=>top_1hz, row=>top_dzrow,col_r=>top_dzcolr,col_g=>top_dzcolg,onoff=>top_dzonoff);
 	u3:BEEP  port map(clk_beep_1khz=>top_1khz,onoff=>top_beeponoff,spks=>top_beepspks,led=>top_beepled);
 	u4:LCD   port map(clk_lcd_1khz=>top_1khz,clear=>top_clear,onoff=>top_lcdonoff,t1=>top_lcdtime,t2=>top_lcdtime0,RW=>top_lcdrw,E=>top_lcde,RS=>top_lcdrs,data=>top_lcddata);
 	u5:KEY   port map(inclk=>top_1khz, inrow=>top_keyrow,incol=>top_keycol,outshumaguan=>top_keydata);
